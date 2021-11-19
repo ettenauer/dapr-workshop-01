@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.31903.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dapr.Workshop.WeatherCube.Sensor", "Dapr.Workshop.WeatherCube.Sensor\Dapr.Workshop.WeatherCube.Sensor.csproj", "{B72732B9-EB1F-40E1-B576-C198F6A9BEE0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dapr-components", "dapr-components", "{C235A2A3-09AC-4433-98DF-374E97BECDC0}"
+	ProjectSection(SolutionItems) = preProject
+		..\dapr-components\pubsub_kafka.yaml = ..\dapr-components\pubsub_kafka.yaml
+		..\dapr-components\pubsub_redis.yaml = ..\dapr-components\pubsub_redis.yaml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dapr.Workshop.DomainObjects", "Dapr.Workshop.DomainObjects\Dapr.Workshop.DomainObjects.csproj", "{95000B13-ACB7-4880-9420-5630AB9C9B1A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "local-infrastructure", "local-infrastructure", "{79052864-3414-4567-BC0F-7403C8A4AEDB}"
+	ProjectSection(SolutionItems) = preProject
+		..\local-infrastructure\docker-compose.yaml = ..\local-infrastructure\docker-compose.yaml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dapr.Workshop.WeatherCube.Station", "Dapr.Workshop.WeatherCube.Station\Dapr.Workshop.WeatherCube.Station.csproj", "{C43F82BC-33D0-4FCD-8049-CA372DCC5787}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B72732B9-EB1F-40E1-B576-C198F6A9BEE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B72732B9-EB1F-40E1-B576-C198F6A9BEE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B72732B9-EB1F-40E1-B576-C198F6A9BEE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B72732B9-EB1F-40E1-B576-C198F6A9BEE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95000B13-ACB7-4880-9420-5630AB9C9B1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95000B13-ACB7-4880-9420-5630AB9C9B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95000B13-ACB7-4880-9420-5630AB9C9B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95000B13-ACB7-4880-9420-5630AB9C9B1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C43F82BC-33D0-4FCD-8049-CA372DCC5787}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C43F82BC-33D0-4FCD-8049-CA372DCC5787}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C43F82BC-33D0-4FCD-8049-CA372DCC5787}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C43F82BC-33D0-4FCD-8049-CA372DCC5787}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {607EB4E3-753F-4D42-91BD-D98D68D458E1}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,19 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: sensor-topic
+  namespace: azure-env
+spec:
+  type: bindings.azure.storagequeues
+  version: v1
+  metadata:
+  - name: storageAccount
+    value: "account1"
+  - name: storageAccessKey
+    value: "***********"
+  - name: queue
+    value: "myqueue"
+  - name: ttlInSeconds
+    value: "60"
+  - name: decodeBase64
+    value: "false"
