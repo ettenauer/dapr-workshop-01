@@ -11,14 +11,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dapr-components", "dapr-com
 		..\dapr-components\pubsub_redis.yaml = ..\dapr-components\pubsub_redis.yaml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dapr.Workshop.DomainObjects", "Dapr.Workshop.DomainObjects\Dapr.Workshop.DomainObjects.csproj", "{95000B13-ACB7-4880-9420-5630AB9C9B1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dapr.Workshop.DomainObjects", "Dapr.Workshop.DomainObjects\Dapr.Workshop.DomainObjects.csproj", "{95000B13-ACB7-4880-9420-5630AB9C9B1A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "local-infrastructure", "local-infrastructure", "{79052864-3414-4567-BC0F-7403C8A4AEDB}"
 	ProjectSection(SolutionItems) = preProject
 		..\local-infrastructure\docker-compose.yaml = ..\local-infrastructure\docker-compose.yaml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dapr.Workshop.WeatherCube.Station", "Dapr.Workshop.WeatherCube.Station\Dapr.Workshop.WeatherCube.Station.csproj", "{C43F82BC-33D0-4FCD-8049-CA372DCC5787}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dapr.Workshop.WeatherCube.Station", "Dapr.Workshop.WeatherCube.Station\Dapr.Workshop.WeatherCube.Station.csproj", "{C43F82BC-33D0-4FCD-8049-CA372DCC5787}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{803F4E63-6A46-4B6F-A0B1-E4ACC8458567}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
