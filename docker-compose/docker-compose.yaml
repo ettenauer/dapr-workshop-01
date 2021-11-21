@@ -1,0 +1,63 @@
+version: '3.7'
+services:
+  ############################
+  # Sensor app + Dapr sidecar
+  ############################
+  sensor:
+    image: daprworkshopweathercubesensor:latest
+    ports:
+      - "5001:5001"
+    depends_on:
+      - redis
+    networks:
+      - weathercube-dapr
+  sensor-dapr:
+    image: "daprio/daprd:edge"
+    command: ["./daprd",
+     "-app-id", "weathercube_sensor",
+     "-app-port", "4001",
+     "-dapr-http-port", "5001",
+     "-components-path", "/components"]
+    volumes:
+      - "./components/:/components"
+    depends_on:
+      - sensor
+    network_mode: "service:sensor"
+  ############################
+  # Station app + Dapr sidecar
+  ############################
+  station:
+    image: daprworkshopweathercubestation:latest
+    ports:
+      - "5002:5002"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      #- NAMEPSACE=Redis
+      - ASPNETCORE_URLS=http://+:4002
+    depends_on:
+      - redis
+    networks:
+      - weathercube-dapr
+  station-dapr:
+    image: "daprio/daprd:edge"
+    command: ["./daprd",
+     "-app-id", "weathercube_station",
+     "-app-port", "4002",
+     "-dapr-http-port", "5002",
+     "-components-path", "/components"]
+    volumes:
+      - "./components/:/components"
+    depends_on:
+      - station
+    network_mode: "service:station"
+  ############################
+  # Redis state store
+  ############################
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
+    networks:
+      - weathercube-dapr
+networks:
+    weathercube-dapr:

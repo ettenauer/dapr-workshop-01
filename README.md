@@ -3,9 +3,9 @@
 This repository includes demo material for DAPR Workshop 01.
 
 ## Prerequisites
-- `dotnet 6` -> https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu
-- `docker` -> https://docs.docker.com/engine/install/ubuntu/
-- `dapr cli` -> https://docs.dapr.io/getting-started/install-dapr-cli/
+- install `dotnet 6` -> https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu
+- install `docker` -> https://docs.docker.com/engine/install/ubuntu/
+- install `dapr cli` -> https://docs.dapr.io/getting-started/install-dapr-cli/
 - [Optional] `azure cli` -> https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
 - [Optional] `tye cli` -> https://github.com/dotnet/tye/blob/main/docs/getting_started.md
 
@@ -19,7 +19,10 @@ This repository includes demo material for DAPR Workshop 01.
 - run sensor: `dapr run --app-id weathercube_sensor --dapr-http-port 5001 --app-port 4001 --components-path "$PWD/../../dapr-components" -- dotnet run` 
 
 ## Get Started - Dapr Docker-Compose
+- review setup: `./docker-compose/docker-compose.yaml`
+- review dapr components: `./docker-compose/components`
+- run: `docker-compose --project-directory ./docker-compose up -d`
 
-## Get Started - Dapr Tye
+## [Optional] Get Started - Dapr Tye
 
-## Get Started - Dapr Azure Container Apps
+## [Optional] Get Started - Dapr Azure Container Apps

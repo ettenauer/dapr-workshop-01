@@ -25,6 +25,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker-compose", "docker-compose", "{9F12DCF8-9F50-49EB-9876-3A1846AB5A2D}"
+	ProjectSection(SolutionItems) = preProject
+		..\docker-compose\docker-compose.yaml = ..\docker-compose\docker-compose.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tye", "tye", "{DC83C5A4-0A6B-4DE5-A74E-E8CB2DDA4B7A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{24D24E82-8626-44CE-9E8C-D8EBFAE3D628}"
+	ProjectSection(SolutionItems) = preProject
+		..\docker-compose\components\pubsub.yaml = ..\docker-compose\components\pubsub.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +58,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{24D24E82-8626-44CE-9E8C-D8EBFAE3D628} = {9F12DCF8-9F50-49EB-9876-3A1846AB5A2D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {607EB4E3-753F-4D42-91BD-D98D68D458E1}

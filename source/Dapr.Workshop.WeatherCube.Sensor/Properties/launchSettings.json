@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Dapr.Workshop.WeatherCube.Sensor": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
