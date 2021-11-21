@@ -30,8 +30,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker-compose", "docker-co
 		..\docker-compose\docker-compose.yaml = ..\docker-compose\docker-compose.yaml
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tye", "tye", "{DC83C5A4-0A6B-4DE5-A74E-E8CB2DDA4B7A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{24D24E82-8626-44CE-9E8C-D8EBFAE3D628}"
 	ProjectSection(SolutionItems) = preProject
 		..\docker-compose\components\pubsub.yaml = ..\docker-compose\components\pubsub.yaml

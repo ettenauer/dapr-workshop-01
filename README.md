@@ -23,6 +23,5 @@ This repository includes demo material for DAPR Workshop 01.
 - review dapr components: `./docker-compose/components`
 - run: `docker-compose --project-directory ./docker-compose up -d`
 
-## [Optional] Get Started - Dapr Tye
-
 ## [Optional] Get Started - Dapr Azure Container Apps
+- https://docs.microsoft.com/en-us/azure/container-apps/microservices-dapr
