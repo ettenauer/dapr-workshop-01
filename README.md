@@ -7,7 +7,6 @@ This repository includes demo material for DAPR Workshop 01.
 - install `docker` -> https://docs.docker.com/engine/install/ubuntu/
 - install `dapr cli` -> https://docs.dapr.io/getting-started/install-dapr-cli/
 - [Optional] `azure cli` -> https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
-- [Optional] `tye cli` -> https://github.com/dotnet/tye/blob/main/docs/getting_started.md
 
 ## Get Started - Dapr Cli
 - setup dapr: `dapr init -s`
