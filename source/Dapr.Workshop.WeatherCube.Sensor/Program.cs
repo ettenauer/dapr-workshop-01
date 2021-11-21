@@ -1,30 +1,48 @@
 ﻿using Dapr.Client;
 using Dapr.Workshop.DomainObjects;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
-Console.WriteLine($"Sensor {Environment.MachineName} is ready.");
+const string ENDPOINT = "http://localhost:4001";
+
+var serviceCollection = new ServiceCollection()
+    .AddLogging(configure => configure.AddConsole());
+
+var serviceProvider = serviceCollection.BuildServiceProvider();
+var logger = serviceProvider
+        .GetService<ILoggerFactory>()?
+        .CreateLogger<Program>() ?? throw new ArgumentNullException(nameof(serviceProvider));
+
+logger.LogInformation($"Sensor {Environment.MachineName} is ready.");
 
 using var cts = new CancellationTokenSource(TimeSpan.FromMinutes(5));
 try
 {
+    var random = new Random();
+    using var client = new DaprClientBuilder()
+    .UseHttpEndpoint(ENDPOINT)
+    .Build();
+
     do
     {
-        using var client = new DaprClientBuilder()
-            .UseHttpEndpoint("http://127.0.0.1:4001")
-            .Build();
+        var measurement = new Measurement 
+        { 
+            SensorId = Environment.MachineName,
+            Temperature = random.Next(-10, 40),
+            Timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") 
+        };
 
-        await client.PublishEventAsync("pubsub",
-            "sensor-data",
-            new Measurement { SensorId = Environment.MachineName, Temperature = 10.4m, Timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") },
-            cancellationToken: cts.Token);
+        await client.PublishEventAsync("pubsub","sensor-data", measurement, cancellationToken: cts.Token);
 
-        await Task.Delay(TimeSpan.FromSeconds(1), cts.Token);
+        logger.LogInformation($"{measurement.SensorId}: send at {measurement.Timestamp}");
+
+        await Task.Delay(TimeSpan.FromSeconds(5), cts.Token);
 
     } while (!cts.IsCancellationRequested);
 }
 catch (Exception ex)
 {
-    Console.WriteLine(ex.Message);
+    logger.LogError(ex, "error:");
 }
 
-
-Console.WriteLine($"Sensor {Environment.MachineName} is terminated.");
+logger.LogInformation($"Sensor {Environment.MachineName} is terminated.");

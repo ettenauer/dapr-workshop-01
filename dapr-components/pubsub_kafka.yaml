@@ -1,22 +1,23 @@
-#apiVersion: dapr.io/v1alpha1
-#kind: Component
-#metadata:
-#  name: sensor-topic
-#  namespace: kafka-env
-#spec:
-#  type: bindings.kafka
-#  version: v1
-#  metadata:
-#  # Kafka broker connection setting
-#  - name: brokers
-#    value: localhost:9092
-#  # consumer configuration: topic and consumer group
-#  - name: topics
-#    value: sample
-#  - name: consumerGroup
-#    value: group1
-#  # publisher configuration: topic
-#  - name: publishTopic
-#    value: sample
-#  - name: authRequired
-#    value: "false"
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: pubsub
+  namespace: kafka
+spec:
+  type: pubsub.kafka
+  version: v1
+  metadata:
+  - name: brokers
+    value: "localhost:9092"
+  - name: consumerGroup
+    value: "group1"
+  - name: clientID
+    value: "my-dapr-app-id"
+  - name: authRequired
+    value: "false"
+  - name: maxMessageBytes
+    value: 1024
+  - name: consumeRetryInterval
+    value: 200ms
+  - name: version
+    value: 0.10.2.0
