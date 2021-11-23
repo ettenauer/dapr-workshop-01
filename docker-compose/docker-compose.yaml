@@ -4,7 +4,7 @@ services:
   # Sensor app + Dapr sidecar
   ############################
   sensor:
-    image: daprworkshopweathercubesensor:latest
+    image: ghcr.io/ettenauer/daprworkshopweathercubesensor:latest
     ports:
       - "5001:5001"
     depends_on:
@@ -27,7 +27,7 @@ services:
   # Station app + Dapr sidecar
   ############################
   station:
-    image: daprworkshopweathercubestation:latest
+    image: ghcr.io/ettenauer/daprworkshopweathercubestation:latest
     ports:
       - "5002:5002"
     environment:
