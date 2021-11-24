@@ -13,7 +13,7 @@ This repository includes demo material for DAPR Workshop 01.
 - choose redis broker: `export NAMESPACE=redis`
 - choose kafka broker: `export NAMESPACE=kafka`
 - run station: `dapr run --app-id weathercube_station --dapr-http-port 5002 --app-port 4002 --components-path "$PWD/../../dapr-cli" -- dotnet run`
-- test station: `curl http://localhost:5002/v1.0/invoke/weather_station/method/ping -X GET`
+- test station: `curl http://localhost:5002/v1.0/invoke/weathercube_station/method/ping -X GET`
 - run sensor: `dapr run --app-id weathercube_sensor --dapr-http-port 5001 --app-port 4001 --components-path "$PWD/../../dapr-cli" -- dotnet run` 
 
 ## Get Started - Dapr Docker-Compose
